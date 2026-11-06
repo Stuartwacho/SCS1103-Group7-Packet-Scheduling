@@ -111,4 +111,4 @@ For WFQ, both observed fairness and fairness relative to the configured weights 
 
 The expected outcome is a quantitative comparison of how FIFO, PQ and WFQ distribute available bandwidth among competing network flows.
 
-The findings will help identify the fairness characteristics and potential limitations of each scheduling algorithm under simulated bandwidth-constrained network conditions.
+The findings will help identify the fairness characteristics and potential limitations of each scheduling algorithm under simulated bandwidth-constrained network conditions
