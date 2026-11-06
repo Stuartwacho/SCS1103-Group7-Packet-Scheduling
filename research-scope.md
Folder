@@ -1,0 +1,30 @@
+Research Project Scope
+
+Project Title
+
+Scheduling Packets for a Rural Environment with Constraints
+
+Research Question
+
+How do FIFO, Priority Queuing (PQ), and Weighted Fair Queuing (WFQ) compare in terms of throughput, packet delay, packet loss, and flow fairness under simulated bandwidth-constrained network conditions?
+
+Research Aim
+
+To evaluate and compare the performance of FIFO, PQ, and WFQ scheduling algorithms in a simulated bandwidth-constrained network environment using MAWI traffic traces.
+
+Research Objectives
+
+1. Examine the operating principles of FIFO, PQ and WFQ.
+2. Obtain and prepare suitable MAWI network traffic traces.
+3. Implement and test the three scheduling algorithms under controlled network conditions.
+4. Measure throughput, packet delay, packet loss and flow fairness.
+5. Compare results and identify the strengths and limitations of each algorithm.
+
+Dataset
+
+MAWI Working Group Traffic Archive:
+https://mawi.wide.ad.jp/mawi/
+
+Research Plan
+
+The group will use a quantitative experimental approach to compare the three scheduling algorithms under identical simulated network conditions. Results will be analysed using comparative tables and graphs.
