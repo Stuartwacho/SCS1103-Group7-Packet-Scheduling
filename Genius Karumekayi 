@@ -1,0 +1,78 @@
+Research Quality Assurance and Report Accuracy
+
+1. Introduction
+
+Quality assurance is an important part of the research process because it ensures that the information, experimental procedures, measurements and conclusions presented in the study are accurate, consistent and reliable.
+
+This project evaluates FIFO, Priority Queuing (PQ), and Weighted Fair Queuing (WFQ) under simulated bandwidth-constrained network conditions. Quality assurance will therefore focus on verifying the technical information, experimental configurations, performance measurements and research findings.
+
+2. Technical Information Verification
+
+The technical descriptions of the three scheduling algorithms will be reviewed to ensure that they correctly explain their operating principles.
+
+The verification process will examine:
+
+- FIFO packet ordering and queue management.
+- PQ traffic classification and priority-based scheduling.
+- WFQ flow classification and weighted bandwidth allocation.
+
+Information will be checked against credible networking textbooks, academic publications and technical documentation.
+
+3. Dataset Verification
+
+The MAWI Working Group Traffic Archive will be checked to confirm that:
+
+- The selected traffic trace exists and can be accessed.
+- The correct trace filename and date are documented.
+- The dataset source is properly acknowledged.
+- Applicable usage and licensing conditions are respected.
+- The limitations of using MAWI traffic as a proxy for rural Zimbabwean network traffic are clearly explained.
+
+Dataset source: https://mawi.wide.ad.jp/mawi/
+
+4. Performance Measurement Verification
+
+The performance evaluation will use four metrics:
+
+Throughput: Verify that successfully received data is measured over the correct time interval.
+
+Packet Delay: Check that packet transmission and reception timestamps are used consistently when calculating average delay.
+
+Packet Loss: Verify that transmitted and received packet counts are correctly recorded.
+
+Flow Fairness: Check the calculation and interpretation of Jain's Fairness Index.
+
+All calculations will be checked before the results are included in the final report.
+
+5. Experimental Consistency
+
+To maintain a fair comparison, the following conditions must remain consistent across the three scheduling algorithms:
+
+- Traffic inputs.
+- Available bandwidth.
+- Queue capacity.
+- Experimental duration.
+- Measurement procedures.
+
+Any configuration differences must be documented and justified.
+
+6. Results and Documentation Review
+
+The results will be reviewed to ensure that:
+
+- Tables accurately represent measured data.
+- Graphs use correctly labelled axes and units.
+- Calculations agree with recorded experimental results.
+- Interpretations are supported by evidence.
+- References are correctly cited.
+- Conclusions do not make claims beyond what the experiments demonstrate.
+
+7. Limitations and Research Integrity
+
+The study uses MAWI traffic traces as proxy traffic in a simulated constrained-bandwidth environment. Therefore, findings will be limited to the selected simulation conditions and will not be presented as direct measurements of actual rural Zimbabwean ISP performance.
+
+No experimental results will be invented or altered to favour a particular scheduling algorithm.
+
+8. Expected Outcome
+
+The quality assurance process is expected to improve the accuracy, reliability, consistency and academic credibility of the final research report and presentation.
