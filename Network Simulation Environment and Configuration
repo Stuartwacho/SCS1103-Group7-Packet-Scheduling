@@ -122,4 +122,4 @@ Before collecting performance results, the group will verify that:
 
 The expected outcome is a documented, reproducible network simulation configuration suitable for comparing FIFO, PQ and WFQ under bandwidth-constrained conditions.
 
-The environment will provide a controlled basis for evaluating throughput, packet delay, packet loss and flow fairness.
+The environment will provide a controlled basis for evaluating throughput, packet delay, packet loss and flow fairness
