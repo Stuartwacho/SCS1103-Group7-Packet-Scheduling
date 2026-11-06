@@ -1,0 +1,126 @@
+MAWI Dataset Acquisition and Preparation
+
+1. Introduction
+
+This research project investigates the performance of First-In-First-Out (FIFO), Priority Queuing (PQ), and Weighted Fair Queuing (WFQ) scheduling algorithms under simulated bandwidth-constrained network conditions.
+
+To support the experimental evaluation, the study proposes using packet traffic traces obtained from the MAWI Working Group Traffic Archive.
+
+The dataset will provide packet-level traffic information for constructing reproducible network simulation scenarios.
+
+2. Dataset Description
+
+Dataset Name: MAWI Working Group Traffic Archive
+
+Dataset Source: https://mawi.wide.ad.jp/mawi/
+
+Proposed Dataset: Samplepoint-F traffic traces
+
+Data Format: Packet capture (PCAP), subject to the selected trace's available format.
+
+Proposed Capture Duration: 15 minutes.
+
+The MAWI archive provides network traffic traces collected from operational network links. These traces can be used to investigate traffic characteristics, packet arrivals, packet sizes and network flow behaviour.
+
+The exact trace date, filename, capture format and availability will be confirmed before the experiments begin.
+
+3. Dataset Selection Criteria
+
+The selected traffic trace should satisfy the following requirements:
+
+1. Be accessible through the MAWI Working Group Traffic Archive.
+2. Contain sufficient packet-level information for the intended simulation.
+3. Provide timestamps suitable for reconstructing packet arrival patterns.
+4. Include packet sizes and sufficient information for identifying competing flows.
+5. Be manageable using the group's available computing resources.
+6. Be permitted for the intended academic research use.
+
+4. Dataset Preparation
+
+The following preparation procedure is proposed.
+
+Step 1: Dataset Acquisition
+
+Access the MAWI archive and select an appropriate samplepoint-F traffic trace.
+
+Record:
+
+- Capture date.
+- Exact filename.
+- Source URL.
+- File size.
+- Capture format.
+- Applicable usage conditions.
+
+Step 2: Dataset Inspection
+
+Inspect the selected trace using suitable packet analysis tools, such as Wireshark, tshark or Python-based packet processing libraries.
+
+Determine whether the trace contains the information required for the experiment.
+
+Step 3: Traffic Extraction
+
+Extract relevant packet characteristics, including:
+
+- Packet timestamps.
+- Packet lengths.
+- Available source and destination identifiers.
+- Protocol information.
+- Flow identifiers, where supported by the trace.
+
+Step 4: Data Cleaning and Preparation
+
+Identify malformed or unsupported records and document any exclusions.
+
+Prepare a structured traffic input that preserves the relevant packet arrival timing, packet sizes and flow characteristics.
+
+Step 5: Simulation Integration
+
+Use the prepared traffic information as input to the selected simulation environment.
+
+The same traffic inputs will be used for FIFO, PQ and WFQ to support a controlled comparison.
+
+5. Dataset Limitations
+
+The MAWI traffic traces originate from operational networks that may differ substantially from rural Zimbabwean network environments.
+
+Therefore, the dataset will be used as proxy traffic for a simulated bandwidth-constrained network rather than as direct evidence of rural ISP traffic conditions.
+
+Additional limitations may include:
+
+- Anonymised network identifiers.
+- Incomplete or truncated packet information.
+- Differences between captured traffic and simulated traffic.
+- Limited representation of rural network usage patterns.
+- Potential restrictions on data redistribution.
+
+These limitations will be considered when interpreting experimental findings.
+
+6. Dataset Ethics and Usage Conditions
+
+The group will review the MAWI archive's applicable usage conditions before downloading, processing or redistributing any trace.
+
+The project will acknowledge the original data source and avoid publishing packet contents or sensitive information unnecessarily.
+
+The GitHub repository will document the dataset source and retrieval procedure rather than automatically uploading the full PCAP file.
+
+7. Dataset Documentation Record
+
+The following information must be completed after selecting the actual trace.
+
+Field| Value
+Dataset| MAWI Working Group Traffic Archive
+Capture location| Samplepoint-F, subject to verification
+Capture date| To be confirmed
+Exact filename| To be confirmed
+File size| To be confirmed
+Capture duration| To be verified
+Data format| To be verified
+Source URL| https://mawi.wide.ad.jp/mawi/
+Usage conditions| To be verified
+
+8. Expected Outcome
+
+The expected outcome is a verified, documented and appropriately prepared network traffic dataset suitable for controlled simulation experiments comparing FIFO, PQ and WFQ scheduling algorithms.
+
+The prepared data will support the group's evaluation of throughput, packet delay, packet loss and flow fairness under constrained bandwidth conditions.
