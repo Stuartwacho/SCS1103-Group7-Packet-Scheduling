@@ -75,4 +75,128 @@ No experimental results will be invented or altered to favour a particular sched
 
 8. Expected Outcome
 
-The quality assurance process is expected to improve the accuracy, reliability, consistency and academic credibility of the final research report and presentation.
+The quality assurance process is expected to improve the accuracy, reliability, consistency and academic credibility of the final research report and presentation.Network Simulation Environment and Configuration
+
+1. Introduction
+
+This research project investigates the performance of First-In-First-Out (FIFO), Priority Queuing (PQ), and Weighted Fair Queuing (WFQ) scheduling algorithms under simulated bandwidth-constrained network conditions.
+
+A controlled network simulation environment will be developed to evaluate how the three algorithms manage competing traffic flows when available bandwidth is limited.
+
+The simulation will use traffic characteristics extracted from the MAWI Working Group Traffic Archive.
+
+2. Selection of Simulation Environment
+
+The group will evaluate suitable network simulation tools before selecting the environment for implementation.
+
+Potential tools include:
+
+NS-3: A discrete-event network simulator that supports detailed modelling of network traffic, communication links and queueing behaviour.
+
+Mininet: A network emulation platform that creates virtual hosts, switches and links for controlled networking experiments.
+
+Python-based simulation: A custom discrete-event simulator that can model packet arrivals, queues, scheduling decisions and packet departures.
+
+The selected environment must support:
+
+- Packet arrival and transmission modelling.
+- Configurable link bandwidth.
+- Queue capacity limits.
+- FIFO, PQ and WFQ scheduling behaviour.
+- Packet-level performance measurements.
+- Reproducible experimental configurations.
+
+Selected tool: To be confirmed after technical evaluation.
+
+3. Proposed Network Topology
+
+The experiment will use a simplified network topology consisting of traffic sources, a scheduling router, a constrained communication link and a receiving endpoint.
+
+Traffic Sources → Scheduling Router → Bandwidth-Constrained Link → Destination
+
+Multiple competing traffic flows will enter the scheduling router.
+
+The scheduling algorithm will determine the order in which packets are transmitted across the constrained link.
+
+4. Proposed Simulation Parameters
+
+The following parameters are proposed as initial experimental settings and must be validated before implementation.
+
+Parameter| Proposed Configuration
+Network topology| Multiple sources, one bottleneck link, one destination
+Bandwidth| 2 Mbps, 5 Mbps and 10 Mbps
+Scheduling algorithms| FIFO, PQ and WFQ
+Traffic input| Prepared MAWI packet traffic traces
+Queue capacity| 100 packets initially
+Queue overflow policy| Tail drop
+Simulation duration| Based on selected trace and queue-drain policy
+Traffic classes| To be defined
+WFQ weights| To be defined
+Performance metrics| Throughput, delay, packet loss and fairness
+
+The bandwidth values are experimental assumptions, not measured characteristics of rural Zimbabwean networks.
+
+5. Bandwidth-Constrained Network Configuration
+
+The simulation will introduce a bottleneck link with limited transmission capacity.
+
+When the traffic arrival rate exceeds the available link capacity, packets may accumulate in the scheduler's queue.
+
+If the queue reaches its configured capacity, additional packets will be dropped according to the selected overflow policy.
+
+The group will evaluate how the scheduling algorithms manage these conditions.
+
+6. Scheduling Algorithm Configuration
+
+6.1 FIFO
+
+FIFO will use a single queue.
+
+Packets will be transmitted in arrival order, subject to the configured queue capacity and transmission rate.
+
+6.2 Priority Queuing
+
+PQ will use multiple queues assigned different priority levels.
+
+Packets from the highest-priority non-empty queue will be served first.
+
+Traffic classification rules and queue capacity allocation will be documented.
+
+6.3 Weighted Fair Queuing
+
+WFQ will use flow-based scheduling with assigned weights.
+
+The weights will influence the relative service allocation among competing traffic flows.
+
+The implementation must be verified to ensure that it follows weighted fair queueing principles rather than simple round-robin scheduling.
+
+7. Experimental Consistency
+
+To ensure a valid comparison, the following parameters will be controlled:
+
+- Traffic input and packet arrival timing.
+- Bottleneck bandwidth.
+- Total queue capacity or buffering budget.
+- Simulation duration and measurement interval.
+- Packet drop policy.
+- Traffic classification assumptions.
+- Random seeds, where applicable.
+
+Only the scheduling algorithm and its necessary algorithm-specific configuration will vary between corresponding experiments.
+
+8. Simulation Verification
+
+Before collecting performance results, the group will verify that:
+
+1. Packets are transmitted according to the selected scheduling algorithm.
+2. The configured bandwidth limit is enforced.
+3. Queue capacity restrictions are applied.
+4. Packet drops are recorded correctly.
+5. Packet transmission and reception timestamps are available.
+6. The experiment can be repeated using documented settings.
+
+9. Expected Outcome
+
+The expected outcome is a documented, reproducible network simulation configuration suitable for comparing FIFO, PQ and WFQ under bandwidth-constrained conditions.
+
+The environment will provide a controlled basis for evaluating throughput, packet delay, packet loss and flow fairness.
