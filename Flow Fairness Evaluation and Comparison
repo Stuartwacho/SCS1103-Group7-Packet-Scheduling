@@ -1,1 +1,114 @@
+Flow Fairness Evaluation and Comparison
 
+1. Introduction
+
+Flow fairness refers to how equally available network resources, particularly bandwidth, are distributed among competing traffic flows.
+
+In bandwidth-constrained networks, multiple flows may compete for limited transmission capacity. Different packet scheduling algorithms manage these competing demands differently.
+
+This research will evaluate the fairness of First-In-First-Out (FIFO), Priority Queuing (PQ), and Weighted Fair Queuing (WFQ) using Jain's Fairness Index.
+
+2. Understanding Flow Fairness
+
+A scheduling algorithm is considered fair when competing flows receive an appropriate and reasonably equitable share of available network resources.
+
+However, fairness does not necessarily mean that every flow must receive exactly the same bandwidth.
+
+For example, Weighted Fair Queuing intentionally allocates bandwidth according to assigned weights. Therefore, fairness must be interpreted in relation to the scheduling policy and configured weights.
+
+3. Jain's Fairness Index
+
+The study will use Jain's Fairness Index to measure how equally throughput is distributed among competing flows.
+
+Formula:
+
+J = (x1 + x2 + ... + xn)² / [n(x1² + x2² + ... + xn²)]
+
+Where:
+
+- J represents Jain's Fairness Index.
+- x represents the throughput received by an individual flow.
+- n represents the number of competing flows.
+
+The index ranges from 1/n to 1 when all measured throughputs are positive.
+
+A value closer to 1 indicates more equal throughput distribution.
+
+4. Example Fairness Calculation
+
+Consider four competing network flows with the following measured throughputs:
+
+Flow| Throughput
+Flow 1| 5 Mbps
+Flow 2| 5 Mbps
+Flow 3| 5 Mbps
+Flow 4| 5 Mbps
+
+Using Jain's Fairness Index:
+
+J = (5 + 5 + 5 + 5)² / [4(5² + 5² + 5² + 5²)]
+
+J = 400 / 400
+
+J = 1.00
+
+This indicates perfectly equal throughput distribution.
+
+If one flow receives substantially more bandwidth than the others, the fairness index will decrease.
+
+5. Fairness Evaluation of Scheduling Algorithms
+
+5.1 FIFO
+
+FIFO transmits packets in their order of arrival.
+
+Although it treats packets according to arrival order, it does not explicitly allocate bandwidth equally among competing flows.
+
+Consequently, a high-volume flow may occupy a large proportion of the available queue capacity and transmission opportunities.
+
+5.2 Priority Queuing (PQ)
+
+PQ classifies traffic into different priority levels.
+
+Higher-priority queues receive preferential service over lower-priority queues.
+
+This can result in unequal bandwidth allocation and possible starvation of lower-priority flows when high-priority traffic continuously arrives.
+
+5.3 Weighted Fair Queuing (WFQ)
+
+WFQ allocates service among competing flows according to assigned weights.
+
+Its design aims to provide controlled bandwidth sharing while allowing different flows to receive different service allocations.
+
+The fairness evaluation must consider whether the observed throughput distribution corresponds to the configured weights.
+
+6. Comparative Fairness Evaluation
+
+The following table will be used to record the experimental results.
+
+Algorithm| Jain's Fairness Index| Interpretation
+FIFO| Pending| To be evaluated
+PQ| Pending| To be evaluated
+WFQ| Pending| To be evaluated
+
+Actual fairness values will be calculated from measured flow throughputs after the experiments.
+
+7. Experimental Considerations
+
+For a meaningful fairness comparison:
+
+- Use the same traffic inputs for all algorithms.
+- Identify and consistently define competing flows.
+- Measure throughput over the same time interval.
+- Record throughput separately for each flow.
+- Document the configured WFQ weights.
+- Examine starvation and unequal bandwidth allocation.
+- Avoid including inactive flows in the fairness calculation without justification.
+
+For WFQ, both observed fairness and fairness relative to the configured weights should be considered.
+
+8. Expected Outcome
+
+The expected outcome is a quantitative comparison of how FIFO, PQ and WFQ distribute available bandwidth among competing network flows.
+
+The findings will help identify the fairness characteristics and potential limitations of each scheduling algorithm under simulated bandwidth-constrained network conditions.
